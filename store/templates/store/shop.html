@@ -1,0 +1,198 @@
+{% extends 'store/base.html' %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+
+{% block body %}
+    <section id="advertisement">
+        <div class="container">
+            <img src="{% static 'vendor/images/shop/banner.jpg' %}" alt=""/>
+        </div>
+    </section>
+
+    <section>
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-3">
+                    <div class="left-sidebar">
+
+                        <div class="brands_products"><!--brands_products-->
+							<h2>Продукция</h2>
+							<div class="brands-name">
+								<ul class="nav nav-pills nav-stacked">
+									<li><a href="#"> <span class="pull-right">( {{ products_vegetables_count }} )</span>Овощи</a></li>
+                                    <li><a href="#"> <span class="pull-right">( {{ products_fruits_count }} )</span>Фрукты</a></li>
+                                    <li><a href="#"> <span class="pull-right">( {{ products_meat_count }} )</span>Мясо</a></li>
+								</ul>
+							</div>
+						</div><!--/brands_products-->
+
+
+						<div class="shipping text-center"><!--shipping-->
+							<img src="{% static 'vendor/images/home/delivery.jpg' %}" alt="" />
+						</div><!--/shipping-->
+
+                    </div>
+                </div>
+
+                <div class="col-sm-9 padding-right">
+                    <div class="features_items"><!--features_items-->
+                        <h2 class="title text-center">Features Items</h2>
+                        <div class="tab-content">
+                            <div id="1">
+                                {% for product in products %}
+                                    <div class="col-sm-4">
+                                        <div class="product-image-wrapper">
+                                            <div class="single-products">
+                                                <div class="productinfo text-center">
+                                                    <img src="{{ product.image.url }}" alt=""/>
+                                                    <h2>{{ product.price }} $</h2>
+                                                    <p>{{ product.name }}</p>
+                                                    <a href="#" class="btn btn-default add-to-cart"><i
+                                                            class="fa fa-shopping-cart"></i>Add to cart</a>
+                                                </div>
+                                                <div class="product-overlay">
+                                                    <div class="overlay-content">
+                                                        <h2>{{ product.price }} $</h2>
+                                                        <p>{{ product.name }}</p>
+                                                        <a href="#" class="btn btn-default add-to-cart"><i
+                                                                class="fa fa-shopping-cart"></i>Add to cart</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="choose">
+                                                <ul class="nav nav-pills nav-justified">
+                                                    <li><a href=""><i class="fa fa-plus-square"></i>Add to wishlist</a>
+                                                    </li>
+                                                    <li><a href=""><i class="fa fa-plus-square"></i>Add to compare</a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                {% endfor %}
+                            </div>
+                        </div>
+                        <div class="tab-content">
+                            <div id="2">
+                                {% for product in products1 %}
+                                    <div class="col-sm-4">
+                                        <div class="product-image-wrapper">
+                                            <div class="single-products">
+                                                <div class="productinfo text-center">
+                                                    <img src="{{ product.image.url }}" alt=""/>
+                                                    <h2>{{ product.price }} $</h2>
+                                                    <p>{{ product.name }}</p>
+                                                    <a href="#" class="btn btn-default add-to-cart"><i
+                                                            class="fa fa-shopping-cart"></i>Add to cart</a>
+                                                </div>
+                                                <div class="product-overlay">
+                                                    <div class="overlay-content">
+                                                        <h2>{{ product.price }} $</h2>
+                                                        <p>{{ product.name }}</p>
+                                                        <a href="#" class="btn btn-default add-to-cart"><i
+                                                                class="fa fa-shopping-cart"></i>Add to cart</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="choose">
+                                                <ul class="nav nav-pills nav-justified">
+                                                    <li><a href=""><i class="fa fa-plus-square"></i>Add to wishlist</a>
+                                                    </li>
+                                                    <li><a href=""><i class="fa fa-plus-square"></i>Add to compare</a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                {% endfor %}
+                            </div>
+                        </div>
+
+                        {% for product in page_obj %}
+                            <div class="col-sm-4">
+                                <div class="product-image-wrapper">
+                                    <div class="single-products">
+                                        <div class="productinfo text-center">
+                                            <img src="{{ product.image.url }}" alt=""/>
+                                            <h2>{{ product.price }} $</h2>
+                                            <p>{{ product.name }}</p>
+                                            <a href="#" class="btn btn-default add-to-cart"><i
+                                                    class="fa fa-shopping-cart"></i>Add to cart</a>
+                                        </div>
+                                        <div class="product-overlay">
+                                            <div class="overlay-content">
+                                                <h2>{{ product.price }} $</h2>
+                                                <p>{{ product.name }}</p>
+                                                <a href="#" class="btn btn-default add-to-cart"><i
+                                                        class="fa fa-shopping-cart"></i>Add to cart</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="choose">
+                                        <ul class="nav nav-pills nav-justified">
+                                            <li><a href=""><i class="fa fa-plus-square"></i>Add to wishlist</a>
+                                            </li>
+                                            <li><a href=""><i class="fa fa-plus-square"></i>Add to compare</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        {% endfor %}
+
+                        <ul class="pagination">
+
+                            {% if page_obj.has_previous %}
+                                <li><a href="?page={{ page_obj.previous_page_number }}"><i class="fa fa-chevron-left"
+                                                                                           aria-hidden="true"></i></a>
+                                </li>
+                            {% else %}
+                                <li class="disabled"><span><i class="fa fa-chevron-left" aria-hidden="true"></i></span>
+                                </li>
+                            {% endif %}
+
+                            {% if page_obj.number|add:'-4' > 1 %}
+                                <li><a href="?page={{ page_obj.number|add:'-5' }}">&hellip;</a></li>
+                            {% endif %}
+
+                            {% for i in page_obj.paginator.page_range %}
+                                {% if page_obj.number == i %}
+                                    <li class="active"><span> {{ i }} </span></li>
+                                {% elif i > page_obj.number|add:'-5' and i < page_obj.number|add:'5' %}
+                                    <li><a href="?page={{ i }}">{{ i }}</a></li>
+                                {% endif %}
+                            {% endfor %}
+
+                            {% if page_obj.paginator.num_pages > page_obj.number|add:'4' %}
+                                <li><a href="?page={{ page_obj.number|add:'5' }}">&hellip;</a></li>
+                            {% endif %}
+
+                            {% if page_obj.has_next %}
+                                <li><a href="?page={{ page_obj.next_page_number }}"><i class="fa fa-chevron-right"
+                                                                                       aria-hidden="true"></i></a></li>
+                            {% else %}
+                                <li class="disabled"><span><i class="fa fa-chevron-right" aria-hidden="true"></i></span>
+                                </li>
+                            {% endif %}
+
+                        </ul>
+
+
+                    </div>
+                </div><!--features_items-->
+            </div>
+        </div>
+        </div>
+    </section>
+
+
+    <script src="{% static 'vendor/js/jquery.js' %}"></script>
+    <script src="{% static 'vendor/js/price-range.js' %}"></script>
+    <script src="{% static 'vendor/js/jquery.scrollUp.min.js' %}"></script>
+    <script src="{% static 'vendor/js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'vendor/js/jquery.prettyPhoto.js' %}"></script>
+    <script src="{% static 'vendor/js/main.js' %}"></script>
+{% endblock body %}
+</html>
