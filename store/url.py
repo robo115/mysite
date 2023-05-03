@@ -1,9 +1,9 @@
 from django.urls import path
-from store.views import shop, product
+from store.views import shop
 
 app_name = 'store'
 
 urlpatterns = [
     path('', shop, name='shop'),
-    path('product-detalis/', product, name='product')
+    path('category/<int:category_id>', shop, name='category'),
     ]

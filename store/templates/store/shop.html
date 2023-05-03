@@ -21,9 +21,9 @@
 							<h2>Продукция</h2>
 							<div class="brands-name">
 								<ul class="nav nav-pills nav-stacked">
-									<li><a href="#"> <span class="pull-right">( {{ products_vegetables_count }} )</span>Овощи</a></li>
-                                    <li><a href="#"> <span class="pull-right">( {{ products_fruits_count }} )</span>Фрукты</a></li>
-                                    <li><a href="#"> <span class="pull-right">( {{ products_meat_count }} )</span>Мясо</a></li>
+									<li><a href="{% url 'shop:category' category_id=1 %}"> <span class="pull-right">( {{ products_vegetables_count }} )</span>Овощи</a></li>
+                                    <li><a href="{% url 'shop:category' category_id=2 %}"> <span class="pull-right">( {{ products_fruits_count }} )</span>Фрукты</a></li>
+                                    <li><a href="{% url 'shop:category' category_id=3 %}"> <span class="pull-right">( {{ products_meat_count }} )</span>Мясо</a></li>
 								</ul>
 							</div>
 						</div><!--/brands_products-->
@@ -38,7 +38,7 @@
 
                 <div class="col-sm-9 padding-right">
                     <div class="features_items"><!--features_items-->
-                        <h2 class="title text-center">Features Items</h2>
+                        <h2 class="title text-center">Вся продукция</h2>
                         <div class="tab-content">
                             <div id="1">
                                 {% for product in products %}
@@ -142,7 +142,7 @@
                             </div>
                         {% endfor %}
 
-                        <ul class="pagination">
+                        <ul class="pagination  pull-right">
 
                             {% if page_obj.has_previous %}
                                 <li><a href="?page={{ page_obj.previous_page_number }}"><i class="fa fa-chevron-left"

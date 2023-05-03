@@ -1,0 +1,266 @@
+[
+  {
+    "model": "store.products",
+    "pk": 1,
+    "fields": {
+      "name": "красный помидор (1 кг)",
+      "description": "",
+      "price": "3.00",
+      "quantity": 500,
+      "image": "products_images/95f6323b-9d15-4f00-991b-489ded2b3157.png",
+      "category": 1
+    }
+  },
+  {
+    "model": "store.products",
+    "pk": 2,
+    "fields": {
+      "name": "свежий огурец (1 кг)",
+      "description": "",
+      "price": "3.50",
+      "quantity": 350,
+      "image": "products_images/cucumber-isolated.jpg",
+      "category": 1
+    }
+  },
+  {
+    "model": "store.products",
+    "pk": 3,
+    "fields": {
+      "name": "маленькие морковки (1 кг)",
+      "description": "",
+      "price": "4.00",
+      "quantity": 200,
+      "image": "products_images/baby-carrots.jpg",
+      "category": 1
+    }
+  },
+  {
+    "model": "store.products",
+    "pk": 5,
+    "fields": {
+      "name": "болгарский перец (1 кг)",
+      "description": "",
+      "price": "3.50",
+      "quantity": 100,
+      "image": "products_images/bell-pepper.jpg",
+      "category": 1
+    }
+  },
+  {
+    "model": "store.products",
+    "pk": 6,
+    "fields": {
+      "name": "лук (1 кг)",
+      "description": "",
+      "price": "2.00",
+      "quantity": 300,
+      "image": "products_images/raw-onions-white-surface.jpg",
+      "category": 1
+    }
+  },
+  {
+    "model": "store.products",
+    "pk": 7,
+    "fields": {
+      "name": "капуста огородная (1 кг)",
+      "description": "",
+      "price": "2.00",
+      "quantity": 150,
+      "image": "products_images/fresh-cabbage.jpg",
+      "category": 1
+    }
+  },
+  {
+    "model": "store.products",
+    "pk": 8,
+    "fields": {
+      "name": "картофель (1 кг)",
+      "description": "",
+      "price": "1.50",
+      "quantity": 500,
+      "image": "products_images/potato-sack-isolated-white.jpg",
+      "category": 1
+    }
+  },
+  {
+    "model": "store.products",
+    "pk": 9,
+    "fields": {
+      "name": "брокколи (1 кг)",
+      "description": "",
+      "price": "4.00",
+      "quantity": 125,
+      "image": "products_images/broccoli-white-surface.jpg",
+      "category": 1
+    }
+  },
+  {
+    "model": "store.products",
+    "pk": 10,
+    "fields": {
+      "name": "баклажан (1 кг)",
+      "description": "",
+      "price": "2.00",
+      "quantity": 150,
+      "image": "products_images/ef292f47-e17e-4367-a2a9-3dcfe9193719.png",
+      "category": 1
+    }
+  },
+  {
+    "model": "store.products",
+    "pk": 11,
+    "fields": {
+      "name": "банан 1 (кг)",
+      "description": "",
+      "price": "5.00",
+      "quantity": 100,
+      "image": "products_images/bananas.jpg",
+      "category": 2
+    }
+  },
+  {
+    "model": "store.products",
+    "pk": 12,
+    "fields": {
+      "name": "авокадо (1 кг)",
+      "description": "",
+      "price": "7.50",
+      "quantity": 50,
+      "image": "products_images/avocado-set-isolated-white-surface.jpg",
+      "category": 2
+    }
+  },
+  {
+    "model": "store.products",
+    "pk": 13,
+    "fields": {
+      "name": "зелёное яблоко (1 кг)",
+      "description": "",
+      "price": "3.50",
+      "quantity": 250,
+      "image": "products_images/green-apple-with-leaves.jpg",
+      "category": 2
+    }
+  },
+  {
+    "model": "store.products",
+    "pk": 14,
+    "fields": {
+      "name": "красное яблоко (1 кг)",
+      "description": "",
+      "price": "3.50",
+      "quantity": 250,
+      "image": "products_images/two-red-apples-isolated-white_1.jpg",
+      "category": 2
+    }
+  },
+  {
+    "model": "store.products",
+    "pk": 15,
+    "fields": {
+      "name": "гранат (1 кг)",
+      "description": "",
+      "price": "2.50",
+      "quantity": 300,
+      "image": "products_images/exotic-delicious-pomegranate-white-background.jpg",
+      "category": 2
+    }
+  },
+  {
+    "model": "store.products",
+    "pk": 16,
+    "fields": {
+      "name": "арбуз (1 кг)",
+      "description": "",
+      "price": "0.50",
+      "quantity": 150,
+      "image": "products_images/watermelon.jpg",
+      "category": 2
+    }
+  },
+  {
+    "model": "store.products",
+    "pk": 17,
+    "fields": {
+      "name": "ананас (1 кг)",
+      "description": "",
+      "price": "7.50",
+      "quantity": 150,
+      "image": "products_images/pineapple.png",
+      "category": 2
+    }
+  },
+  {
+    "model": "store.products",
+    "pk": 18,
+    "fields": {
+      "name": "апельсин(1 кг)",
+      "description": "",
+      "price": "3.50",
+      "quantity": 200,
+      "image": "products_images/sliced-whole-oranges.jpg",
+      "category": 2
+    }
+  },
+  {
+    "model": "store.products",
+    "pk": 19,
+    "fields": {
+      "name": "лимон (1 кг)",
+      "description": "",
+      "price": "5.00",
+      "quantity": 175,
+      "image": "products_images/lemon.jpg",
+      "category": 2
+    }
+  },
+  {
+    "model": "store.products",
+    "pk": 20,
+    "fields": {
+      "name": "свинина (1 кг)",
+      "description": "",
+      "price": "9.50",
+      "quantity": 150,
+      "image": "products_images/pork-meat_1.jpg",
+      "category": 3
+    }
+  },
+  {
+    "model": "store.products",
+    "pk": 21,
+    "fields": {
+      "name": "говядина (1 кг)",
+      "description": "",
+      "price": "11.00",
+      "quantity": 200,
+      "image": "products_images/beef-meat.jpg",
+      "category": 3
+    }
+  },
+  {
+    "model": "store.products",
+    "pk": 22,
+    "fields": {
+      "name": "мясо ягненка (1 кг)",
+      "description": "",
+      "price": "15.00",
+      "quantity": 100,
+      "image": "products_images/lamb_VZXTOZP.jpg",
+      "category": 3
+    }
+  },
+  {
+    "model": "store.products",
+    "pk": 23,
+    "fields": {
+      "name": "курятина (1 кг)",
+      "description": "",
+      "price": "7.50",
+      "quantity": 250,
+      "image": "products_images/chiken_3.jpg",
+      "category": 3
+    }
+  }
+]

@@ -77,9 +77,9 @@
 							<h2>Продукция</h2>
 							<div class="brands-name">
 								<ul class="nav nav-pills nav-stacked">
-									<li><a href="#"> <span class="pull-right">( {{ products_vegetables_count }} )</span>Овощи</a></li>
-                                    <li><a href="#"> <span class="pull-right">( {{ products_fruits_count }} )</span>Фрукты</a></li>
-                                    <li><a href="#"> <span class="pull-right">( {{ products_meat_count }} )</span>Мясо</a></li>
+									<li><a href="{% url 'shop:category' category_id=1 %}"> <span class="pull-right">( {{ products_vegetables_count }} )</span>Овощи</a></li>
+                                    <li><a href="{% url 'shop:category' category_id=2 %}"> <span class="pull-right">( {{ products_fruits_count }} )</span>Фрукты</a></li>
+                                    <li><a href="{% url 'shop:category' category_id=3 %}"> <span class="pull-right">( {{ products_meat_count }} )</span>Мясо</a></li>
 								</ul>
 							</div>
 						</div><!--/brands_products-->
@@ -107,7 +107,7 @@
 										</div>
 										<div class="product-overlay">
 											<div class="overlay-content">
-												<h2>{{ product.price }}</h2>
+												<h2>{{ product.price }} $</h2>
 												<p>{{ product.name }}</p>
 												<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
 											</div>

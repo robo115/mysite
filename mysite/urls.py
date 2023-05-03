@@ -28,7 +28,7 @@ urlpatterns = [
     path('cart/', cart, name='cart'),
     path('chekout/', checkout, name='checkout'),
     path('contact', contact, name='contact'),
-    path('login/', login, name='login'),
+    path('user/', include('users.urls'), name='user'),
     path('404/', error, name='error'),
 ]
 

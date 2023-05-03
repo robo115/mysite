@@ -43,17 +43,14 @@ def index(request):
     return render(request, 'store/index.html', context)
 
 
-def login(request):
-    return render(request, 'store/login.html')
-
-
-def shop(request):
-    products_list = Products.objects.all()
+def shop(request, category_id=None):
+    products_list = Products.objects.filter(category_id=category_id) if category_id else Products.objects.all()
     paginator = Paginator(products_list, 12)
 
     page_number = request.GET.get('page')
     page_obj = paginator.get_page(page_number)
     context = {
+        'products_list': products_list,
         'page_obj': page_obj,
         'products_meat_count': products_meat_count,
         'products_fruits_count': products_fruits_count,
@@ -72,10 +69,6 @@ def cart(request):
 
 def error(request):
     return render(request, 'store/404.html')
-
-
-def product(request):
-    return render(request, 'store/product-details.html')
 
 
 def checkout(request):
