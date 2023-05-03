@@ -1,0 +1,29 @@
+{% extends 'store/base.html' %}
+{% load static %}
+
+{% block body %}
+    <link href="{% static 'vendor/css/registration.css' %}" rel="stylesheet">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-5">
+                <div class="card">
+                    <h2 class="card-title text-center">Register </h2>
+                    <div class="card-body py-md-4">
+                        <form action="{% url 'user:registration' %}" method="post">
+                            {% csrf_token %}
+                            {{ form.username }}
+                            {{ form.email }}
+                            {{ form.password1 }}
+                            {{ form.password2 }}
+                            <div class="d-flex flex-row align-items-center justify-content-between">
+                                <a href="{% url 'user:login' %}">Login</a>
+                                <button class="btn btn-primary pull-right up">Create Account</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
