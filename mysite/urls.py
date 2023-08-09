@@ -20,16 +20,18 @@ from django.conf.urls.static import static
 from django.conf import settings
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('', index, name='index'),
-    path('shop/', include('store.url', namespace='shop')),
-    path('blog/', blog, name='blog'),
-    path('blog-single/', blog_single, name='blog-single'),
-    path('cart/', cart, name='cart'),
-    path('chekout/', checkout, name='checkout'),
-    path('contact', contact, name='contact'),
-    path('user/', include('users.urls'), name='user'),
-    path('404/', error, name='error'),
+    path("admin/", admin.site.urls),
+    path("", index, name="index"),
+    path("shop/", include("store.url", namespace="shop")),
+    path("cart/", cart, name="cart"),
+    path("add_to_cart/<int:product_id>", add_to_cart, name="add_to_cart"),
+    path("quantity_plus/<int:product_id>", quantity_plus, name="quantity_plus"),
+    path("quantity_minus<int:product_id>", quantity_minus, name="quantity_minus"),
+    path("cart_delete/<int:product_id>", cart_delete, name="cart_delete"),
+    path("chekout/", checkout, name="checkout"),
+    path("contact", contact, name="contact"),
+    path("user/", include("users.urls"), name="user"),
+    path("404/", error, name="error"),
 ]
 
 if settings.DEBUG:
