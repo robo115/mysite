@@ -21,15 +21,6 @@
     <script src="{% static 'vendor/js/html5shiv.js' %}"></script>
     <script src="{% static 'vendor/js/respond.min.js' %}"></script>
     <![endif]-->
-    <link rel="shortcut icon" href="{% static 'vendor/images/ico/favicon.ico' %}">
-    <link rel="apple-touch-icon-precomposed" sizes="144x144"
-          href="{% static 'vendor/images/ico/apple-touch-icon-144-precomposed.png' %}">
-    <link rel="apple-touch-icon-precomposed" sizes="114x114"
-          href="{% static 'vendor/images/ico/apple-touch-icon-114-precomposed.png' %}">
-    <link rel="apple-touch-icon-precomposed" sizes="72x72"
-          href="{% static 'vendor/images/ico/apple-touch-icon-72-precomposed.png' %}">
-    <link rel="apple-touch-icon-precomposed"
-          href="{% static 'vendor/images/ico/apple-touch-icon-57-precomposed.png' %}">
 </head>
 <header id="header"><!--header-->
     <div class="header_top"><!--header_top-->
@@ -38,8 +29,8 @@
                 <div class="col-sm-6">
                     <div class="contactinfo">
                         <ul class="nav nav-pills">
-                            <li><a href="#"><i class="fa fa-phone"></i> +2 95 05 88</a></li>
-                            <li><a href="#"><i class="fa fa-envelope"></i> info@domain.com</a></li>
+                            <li><a href="#"><i class=""></i> Created By</a></li>
+                            <li><a href="#"><i class="fa fa-envelope"></i> robodovl0@gmail.com</a></li>
                         </ul>
                     </div>
                 </div>
@@ -47,8 +38,7 @@
                     <div class="social-icons pull-right">
                         <ul class="nav navbar-nav">
                             <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                            <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                            <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                            <li><a href="https://ge.linkedin.com/in/robert-dovlatbegian-39415a275?original_referer=https%3A%2F%2Fwww.google.com%2F"><i class="fa fa-linkedin"></i></a></li>
                             <li><a href="#"><i class="fa fa-dribbble"></i></a></li>
                             <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
                         </ul>
@@ -103,13 +93,15 @@
                             <li class="dropdown"><a href="#">Shop<i class="fa fa-angle-down"></i></a>
                                 <ul role="menu" class="sub-menu">
                                     <li><a href="{% url 'shop:shop' %}">Products</a></li>
-                                    <li><a href="{% url 'shop:shop' %}">Products</a></li>
                                     <li><a href="{% url 'checkout' %}">Checkout</a></li>
                                     <li><a href="{% url 'cart' %}">Cart</a></li>
+                                    {% if not user.is_authenticated %}
                                     <li><a href="{% url 'user:login' %}">Login</a></li>
+                                        {% else %}
+                                        <li><a href="{% url 'user:logout' %}">Logout</a></li>
+                                    {% endif %}
                                 </ul>
                             </li>
-                            <li><a href="{% url 'error' %}">404</a></li>
                             <li><a href="{% url 'contact' %}">Contact</a></li>
                         </ul>
                     </div>

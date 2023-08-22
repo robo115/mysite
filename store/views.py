@@ -5,6 +5,7 @@ from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import get_object_or_404
 from .models import Wishlist
+from django.db.models import Sum
 
 
 products = Products.objects.all()
@@ -72,21 +73,28 @@ def contact(request):
 
 
 def add_to_cart(request, product_id):
-    product = get_object_or_404(Products, id=product_id)
-    if product.id in Wishlist.objects.all().values_list("wished_item", flat=True):
-        return redirect("cart")
-    item = Wishlist(user=request.user, wished_item=product)
-    item.total_product = item.quantity * product.price
-    item.save()
+    if request.user.is_authenticated:
+        product = get_object_or_404(Products, id=product_id)
+        if product.id in Wishlist.objects.all().values_list("wished_item", flat=True):
+            return redirect("cart")
+        item = Wishlist(user=request.user, wished_item=product)
+        item.total_product = item.quantity * product.price
+        item.save()
+        return redirect("index")
 
-    return redirect("index")
+    else:
+        return redirect('user:login')
 
 
-@login_required
 def cart(request):
-    items = Wishlist.objects.all()
-    context = {"items": items}
-    return render(request, "store/cart.html", context)
+    if request.user.is_authenticated:
+        items = Wishlist.objects.all()
+        total_price = Wishlist.objects.all().aggregate(Sum('total_product'))['total_product__sum']
+        last_price = total_price + 2
+        context = {"items": items, "total_price": total_price, "last_price": last_price}
+        return render(request, "store/cart.html", context)
+    else:
+        return redirect('user:login')
 
 
 def quantity_plus(request, product_id):
@@ -117,9 +125,16 @@ def cart_delete(request, product_id):
     return redirect("cart")
 
 
-def error(request):
-    return render(request, "store/404.html")
+def error(request, exception):
+    return render(request, "store/404.html", status=404)
 
 
 def checkout(request):
-    return render(request, "store/checkout.html")
+    if request.user.is_authenticated:
+        items = Wishlist.objects.all()
+        total_price = Wishlist.objects.all().aggregate(Sum('total_product'))['total_product__sum']
+        last_price = total_price + 2
+        context = {"items": items, "total_price": total_price, "last_price": last_price}
+        return render(request, "store/checkout.html", context)
+    else:
+        return redirect('user:login')
